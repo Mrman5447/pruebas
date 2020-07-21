@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import android.app.IntentService;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -48,10 +49,10 @@ public class GetWeatherService extends IntentService {
 		final int NOTIF_ID = 1;
 		final int REQ_CODE = 2;
 
-		Notification.Builder notifB =  new Notification.Builder(this);
+		Notification.Builder notifB =  new Notification.Builder(this, "IdPrueba");
 		notifB.setSmallIcon(R.drawable.ic_stat_name);
 		notifB.setContentTitle("Actualización!!!");
-		notifB.setContentText("Hay nueva información del clima en Quito");
+		notifB.setContentText("Hay nueva información de un producto");
 		notifB.setAutoCancel(true);
 		
 		Intent intent = new Intent(this, Notificado.class);
@@ -63,5 +64,5 @@ public class GetWeatherService extends IntentService {
 		NotificationManager notifMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		notifMgr.notify(NOTIF_ID, notif);		
 	}
-	
+
 }
