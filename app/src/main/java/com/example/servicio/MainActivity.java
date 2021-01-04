@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     }
     
     public void iniciaServicio(View view) {
-    	Intent intent = new Intent(this, GetWeatherService.class);
+    	Intent intent = new Intent(this, GetSomeService.class);
     	startService(intent);
     }
     

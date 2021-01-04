@@ -8,7 +8,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Intent service = new Intent(context, GetWeatherService.class);
+		Intent service = new Intent(context, GetSomeService.class);
 		context.startService(service);
 	}
 
